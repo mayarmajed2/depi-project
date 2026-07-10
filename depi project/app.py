@@ -318,7 +318,7 @@ def main() -> None:
         guidance = st.slider("Guidance Scale", 1.0, 15.0, 7.5)
         
         st.selectbox("Image Size", ["16:9", "1:1", "4:3", "9:16"], index=0)
-        st.selectbox("Sampler", ["DPM++ 2M Karras", "Euler A", "DDIM"], index=0)
+        st.selectbox("Sampler", ["Euler Ancestral (Stable)", "DPM++ 2M Karras", "DDIM"], index=0)
         seed_in = st.text_input("Manual Seed (optional)", "")
         
         st.markdown("<br><br>", unsafe_allow_html=True)
