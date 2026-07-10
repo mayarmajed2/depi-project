@@ -15,7 +15,7 @@ try:
 except ImportError:
     torch = None
 
-from diffusers import DPMSolverMultistepScheduler, StableDiffusionPipeline, LCMScheduler
+from diffusers import EulerAncestralDiscreteScheduler, StableDiffusionPipeline, LCMScheduler
 
 try:
     from emotion_art.prompts.constants import NEGATIVE_PROMPT
@@ -85,8 +85,8 @@ def get_generator_pipeline() -> StableDiffusionPipeline:
         # Use LCMScheduler for LCM/Turbo models (needs only 1-4 steps!)
         pipe.scheduler = LCMScheduler.from_config(pipe.scheduler.config)
     else:
-        # Use high quality DPMSolverMultistepScheduler for normal SD
-        pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
+        # Use high quality EulerAncestralDiscreteScheduler for normal SD to avoid index errors
+        pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.config)
 
     # Optimization settings for RTX 3050 & small VRAM budgets
     if is_cuda:
