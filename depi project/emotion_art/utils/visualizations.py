@@ -37,7 +37,8 @@ def color_emphasis_overlay(
     # Warm hues in matplotlib HSV: red/orange/yellow ~0–0.15
     warm = np.clip(1.0 - np.minimum(np.abs(h - 0.05), np.abs(h - 1.0)) / 0.2, 0, 1)
     intensity = np.clip(s * 0.6 + warm * 0.4, 0, 1)
-    cmap = cm.get_cmap("magma")
+    import matplotlib
+    cmap = matplotlib.colormaps["magma"]
     heat = cmap(intensity)[:, :, :3]
     heat_u8 = (heat * 255).astype(np.uint8)
     rgb_u8 = (rgb * 255.0).astype(np.uint8)

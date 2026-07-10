@@ -8,8 +8,17 @@ echo.
 :: Get the directory of the batch script
 cd /d "%~dp0depi project"
 
-echo [1/3] Installing/updating project requirements...
-py -m pip install -r requirements.txt
+:: Ensure virtual environment exists
+if not exist ".venv\Scripts\activate.bat" (
+    echo Creating Python 3.12 virtual environment...
+    py -3.12 -m venv .venv
+)
+
+:: Activate the virtual environment
+call .venv\Scripts\activate.bat
+
+echo [1/2] Installing/updating project requirements...
+python -m pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo Error installing requirements!
     pause
@@ -17,17 +26,8 @@ if %errorlevel% neq 0 (
 )
 
 echo.
-echo [2/3] Installing torchvision...
-py -m pip install torchvision
-if %errorlevel% neq 0 (
-    echo Error installing torchvision!
-    pause
-    exit /b %errorlevel%
-)
-
+echo [2/2] Launching Streamlit web application...
 echo.
-echo [3/3] Launching Streamlit web application...
-echo.
-py -m streamlit run app.py
+python -m streamlit run app.py
 
 pause

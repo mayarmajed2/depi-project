@@ -6,6 +6,8 @@ An advanced, offline AI pipeline that analyzes human emotions from text descript
 
 Developed as a showcase for DEPI project.
 
+> 📚 **[Click Here to read the Full Comprehensive Project Documentation (UMLs, Architecture, QA)](docs/Project_Documentation.md)**
+
 ---
 
 ## 🌟 Key Features
@@ -16,6 +18,7 @@ Developed as a showcase for DEPI project.
     *   **Scene Captioning**: Salesforce BLIP models describe context and visual setup.
 *   **Artistic Prompt Engineering**: Programmatic mapping of emotions to professional lighting, styles, color palettes, and negative prompts.
 *   **Local Art Generation**: Generates high-fidelity artwork using Stable Diffusion (`runwayml/stable-diffusion-v1-5`) running completely locally.
+*   **Dynamic Art Gallery**: Automatically reads and displays previously generated masterpieces in a responsive, visually appealing grid layout.
 *   **Computer Vision & Color Analytics**:
     *   Extracts the 5 most dominant color hex codes and percentages using OpenCV K-Means clustering.
     *   Applies a color saturation heat-map overlay to analyze visual weight.
