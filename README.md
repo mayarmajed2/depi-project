@@ -1,5 +1,7 @@
 # 🎨 Emotion-to-Art AI — Local & Offline Multimodal AI System
 
+![Emotion-to-Art AI Banner](github_banner.jpg)
+
 An advanced, offline AI pipeline that analyzes human emotions from text descriptions or uploaded images/portraits, translates them into custom artistic styles using rule-based prompts, and generates beautiful, high-fidelity artworks locally.
 
 Developed as a showcase for DEPI project.
