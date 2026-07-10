@@ -99,4 +99,4 @@ depi project/
 ---
 
 ## 📄 License & Credits
-Developed by **Mayar** as part of the DEPI Project. Powered by Hugging Face, Streamlit, and PyTorch.
+Developed by **DEPI Team**. Powered by Hugging Face, Streamlit, and PyTorch.
